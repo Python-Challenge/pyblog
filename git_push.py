@@ -19,7 +19,7 @@ user = os.environ.get("USER")
 host_name = socket.gethostname()
 
 if len(sys.argv) >= 2:
-    comment = 'from:' + user + '@' + host_name + str(args[1:])
+    comment = 'from:' + user + '@' + host_name + 'comment: ' +  str(args[1:])
     print(comment)
 else:
     comment = 'from:' + user + '@' + host_name 
