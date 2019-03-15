@@ -17,11 +17,11 @@ print(now_date)
 
 user = os.environ.get("USER")
 host_name = socket.gethostname()
-ip_address = socket.gethostbyname(host_name)
-ip_address_some = socket.gethostbyname_ex(host_name)
 
-#comment = 'from:' + user + '@' + host_name + '_' + ip_address 
-comment = 'from:' + user + '@' + host_name 
+if len(sys.argv) >= 3: 
+    comment = 'from:' + user + '@' + host_name + str(args[2])
+else:
+    comment = 'from:' + user + '@' + host_name 
 
 cmd_add = "git add -A"
 cmd_comm = "git commit -a -m " + comment
