@@ -18,8 +18,9 @@ print(now_date)
 user = os.environ.get("USER")
 host_name = socket.gethostname()
 
-if len(sys.argv) >= 3: 
-    comment = 'from:' + user + '@' + host_name + str(args[2])
+if len(sys.argv) >= 2:
+    comment = 'from:' + user + '@' + host_name + str(args[2:])
+    print(comment)
 else:
     comment = 'from:' + user + '@' + host_name 
 
@@ -31,12 +32,8 @@ cmd_pushf_org = "git push origin master -fv"
 subprocess.call( cmd_add, shell=True )
 subprocess.call( cmd_comm, shell=True )
 
-if len(sys.argv) == 2 and args[1] == '-f':
-    print('--------------------- to origin -f ------------------')
-    subprocess.call(cmd_pushf_org, shell=True)
-else:
-    print('--------------------- to origin ---------------------')
-    subprocess.call(cmd_push_org, shell=True)
+print('--------------------- to origin ------------------')
+subprocess.call(cmd_pushf_org, shell=True)
 
 sys.exit()
 
