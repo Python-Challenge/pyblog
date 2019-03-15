@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 import os
 import sys
+import pymysql
 
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pyblogapp.settings')
     try:
+        # add
+        pymysql.install_as_MySQLdb()
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
@@ -13,3 +16,4 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
