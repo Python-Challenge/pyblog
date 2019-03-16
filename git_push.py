@@ -28,12 +28,14 @@ cmd_add = "git add -A"
 cmd_comm = "git commit -a -m " + comment
 cmd_push_org = "git push origin master -v"
 cmd_pushf_org = "git push origin master -fv"
+cmd_pushf_dmake = "git push origin master -v"
 
 subprocess.call( cmd_add, shell=True )
 subprocess.call( cmd_comm, shell=True )
 
 print('--------------------- to origin ------------------')
 subprocess.call(cmd_pushf_org, shell=True)
+subprocess.call(cmd_pushf_dmake, shell=True)
 
 sys.exit()
 

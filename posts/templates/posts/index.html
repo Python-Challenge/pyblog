@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang = "ja-jp">
 <head>
-    <title>投稿一覧</title>
+    <title>PYBLOG 投稿一覧</title>
 </head>
 <body>
-    <h1>これは投稿一覧のページです！</h1>
+    <!--
+    <h1>投稿一覧</h1>
+    {% for blog in blogs %}
+    {{ blogs }} 
+    {% endfor %}
+    -->
+
+    <h1 style="text-align: center;">Py Blog</h1>
+    <div style="width: 70%;margin: 0px auto;">
+    <hr />
+    {% for blog in blogs %}
+    <div>
+      <h3>{{ blog.title }}</h3>
+      <div>{{ blog.text | truncatechars:100 }}</div>
+      <div style="text-align: right;">
+        <a href="{% url 'blogs:detail' blog_id=blog.id %}">記事を読む</a>
+      </div>
+    </div>
+    <hr />
+    {% endfor %}
+  </div>
 </body>
 </html>
