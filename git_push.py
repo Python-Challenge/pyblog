@@ -19,18 +19,20 @@ user = os.environ.get("USER")
 host_name = socket.gethostname()
 
 if len(sys.argv) >= 2:
-    comment = 'from:' + user + '@' + host_name + 'comment: ' +  str(args[1:])
+    comment = str(args[1:])
     print(comment)
 else:
     comment = 'from:' + user + '@' + host_name 
 
 print(comment)
 
-cmd_add = "git add -A"
-cmd_comm = "git commit -a -m " + comment
+cmd_add = "git add -A ."
+cmd_comm = "git commit -am " + comment
 cmd_push_org = "git push origin master -v"
 cmd_pushf_org = "git push origin master -fv"
-cmd_pushf_dmake = "git push origin master -fv"
+cmd_pushf_dmake = "git push d-make master -fv"
+
+print(cmd_comm)
 
 subprocess.call( cmd_add, shell=True )
 subprocess.call( cmd_comm, shell=True )
@@ -38,7 +40,7 @@ subprocess.call( cmd_comm, shell=True )
 print('--------------------- to origin ------------------')
 print('comment : ' + comment)
 subprocess.call(cmd_pushf_org, shell=True)
-subprocess.call(cmd_pushf_dmake, shell=True)
+#subprocess.call(cmd_pushf_dmake, shell=True)
 
 sys.exit()
 
