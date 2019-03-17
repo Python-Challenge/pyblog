@@ -27,7 +27,7 @@ if len(sys.argv) >= 2:
     comment = str(args[1:])
     print(comment)
 else:
-    comment = 'from:' + user + '@' + host_name 
+    comment = 'from:' + user + '@' + host_name
 
 print(comment)
 
@@ -40,8 +40,8 @@ cmd_pushf_dmake = "git push d-make master -fv"
 print(cmd_comm)
 
 try:
-    subprocess.call( cmd_add, shell=True )
-    subprocess.call( cmd_comm, shell=True )
+    subprocess.call(cmd_add, shell=True)
+    subprocess.call(cmd_comm, shell=True)
 
     print('--------------------- to origin ------------------')
     print('comment : ' + comment)
@@ -51,4 +51,3 @@ except:
     traceback.print_exc()
 
 sys.exit()
-
