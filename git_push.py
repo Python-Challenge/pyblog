@@ -46,11 +46,9 @@ try:
     print('--------------------- to origin ------------------')
     print('comment : ' + comment)
     subprocess.call(cmd_pushf_org, shell=True)
-    #subprocess.call(cmd_pushf_dmake, shell=True)
+    subprocess.call(cmd_pushf_dmake, shell=True)
 except:
     traceback.print_exc()
-    
-
 
 sys.exit()
 
