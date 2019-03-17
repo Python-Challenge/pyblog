@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import os, sys, subprocess, datetime, socket
+import os
+import sys
+import subprocess
+import datetime
+import socket
+import traceback
 
 # https://note.nkmk.me/python-os-environ-getenv/
 result_env = os.getenv('SSH_ASKPASS')
@@ -34,13 +39,18 @@ cmd_pushf_dmake = "git push d-make master -fv"
 
 print(cmd_comm)
 
-subprocess.call( cmd_add, shell=True )
-subprocess.call( cmd_comm, shell=True )
+try:
+    subprocess.call( cmd_add, shell=True )
+    subprocess.call( cmd_comm, shell=True )
 
-print('--------------------- to origin ------------------')
-print('comment : ' + comment)
-subprocess.call(cmd_pushf_org, shell=True)
-#subprocess.call(cmd_pushf_dmake, shell=True)
+    print('--------------------- to origin ------------------')
+    print('comment : ' + comment)
+    subprocess.call(cmd_pushf_org, shell=True)
+    #subprocess.call(cmd_pushf_dmake, shell=True)
+except:
+    traceback.print_exc()
+    
+
 
 sys.exit()
 
