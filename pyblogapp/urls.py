@@ -13,8 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path,include
+
+
+# https://qiita.com/okoppe8/items/702dab51e4db5d0ed677
+admin.site.site_title = 'タイトルタグ' 
+admin.site.site_header = 'PyBlog' 
+admin.site.index_title = 'メニュー'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
