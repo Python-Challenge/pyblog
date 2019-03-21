@@ -26,5 +26,7 @@ admin.site.index_title = 'メニュー'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('manager/', include('manager.urls', namespace='manager')),
+    path('csv_upload/', include('csv_upload.urls', namespace='csv_upload')),
     path('', include('posts.urls')),
 ]

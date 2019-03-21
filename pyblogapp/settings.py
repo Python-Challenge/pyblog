@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+    'manager',
     'django.contrib.sites',     # 追加
     'django.contrib.sitemaps',  # 追加
 ]
