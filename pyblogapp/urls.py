@@ -15,7 +15,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
+from django.conf.urls.static import static
 
 
 # https://qiita.com/okoppe8/items/702dab51e4db5d0ed677
@@ -28,5 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('manager/', include('manager.urls', namespace='manager')),
     path('csv_upload/', include('csv_upload.urls', namespace='csv_upload')),
+    #path('robots\.txt$' include('django2_url_robots.views.robots_txt')),
     path('', include('posts.urls')),
 ]

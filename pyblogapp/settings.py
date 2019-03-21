@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'posts',
     'manager',
-    'django.contrib.sites',     # 追加
-    'django.contrib.sitemaps',  # 追加
+    'django2_url_robots',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
