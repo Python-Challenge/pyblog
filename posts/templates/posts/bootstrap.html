@@ -1,18 +1,5 @@
-{% load i18n static %}
-<!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
-<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="{% static 'cms/css/bootstrap.min.css' %}">
-{% block extra_css %}{% endblock %}
-
-<title>{% block title %}My books{% endblock %}</title>
-<!--    <title>boot strap test</title> -->
-</head>
-
-<body>
+{% extends 'posts/layout.html' %}
+{% block content %}
   <h1 style="text-align: center;">boot strap test</h1>
   <h5 style="text-align: center;"> このページはboot strap のテスト用で突然無くなることもありえます。<br>
   管理者はサイト内の情報やリンク先の情報についてなんら責任を負いません。</h5> 
@@ -27,22 +14,5 @@
     <hr />
     {% endfor %}
   </div>
+{% endblock %}
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136559365-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-136559365-1');
-  </script>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2105848979003764",
-      enable_page_level_ads: true
-    });
-  </script>
-
-</body>
-</html>
