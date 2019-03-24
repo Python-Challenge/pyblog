@@ -19,6 +19,15 @@ from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
+# https://narito.ninja/blog/detail/55/
+from django.contrib.sitemaps.views import sitemap
+from posts.sitemap import PostSitemap, StaticSitemap
+
+sitemaps = {
+    'posts': PostSitemap,
+    'static': StaticSitemap,
+}
+
 
 # https://qiita.com/okoppe8/items/702dab51e4db5d0ed677
 admin.site.site_title = 'タイトルタグ' 
@@ -26,10 +35,12 @@ admin.site.site_header = 'PyBlog'
 admin.site.index_title = 'メニュー'
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},  name='sitemap'),
+    #path('robots\.txt$' include('django2_url_robots.views.robots_txt')),
     #path('manager/', include('manager.urls', namespace='manager')),
     path('csv_upload/', include('csv_upload.urls', namespace='csv_upload')),
-    #path('robots\.txt$' include('django2_url_robots.views.robots_txt')),
     path('', include('posts.urls')),
 ]

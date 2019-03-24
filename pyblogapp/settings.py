@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'posts',
+    'posts.apps.PostsConfig',
     'manager',
     'django2_url_robots',
     'bootstrap4',

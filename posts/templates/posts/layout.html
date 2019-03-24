@@ -6,6 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  {% block extra_css %}
+  <link rel="stylesheet" href="{% static 'cms/css/bootstrap.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'cms/css/custom.css' %}"> 
+  {% endblock %}
+
   <!-- favicon.ico -->
   <meta name="msapplication-square70x70logo" content="{% static 'favicon/site-tile-70x70.png' %}">
   <meta name="msapplication-square150x150logo" content="{% static 'favicon/site-tile-150x150.png' %}">
@@ -52,11 +57,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/icon-32x32.png' %}">
   <link rel="manifest" href="{% static '/manifest.json' %}">
 
-  {% block extra_css %}
-    <!-- <link rel="stylesheet" href="{% static 'cms/css/bootstrap.min.css' %}"> -->
-    <link rel="stylesheet" href="{% static 'cms/css/custom.css' %}"> 
-  {% endblock %}
-
   <title>{% block title %}PyBlog {{ blog.title }}{% endblock %}</title>
 
   <!-- adsense -->
@@ -102,7 +102,7 @@
       <!-- 楽天 books1 -->
       <a href="https://hb.afl.rakuten.co.jp/hsc/182428fd.410553f8.181baec8.25e66a1b/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxIiwiYmFuIjoiNjQ0MDgyIn0%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hlb/182428fd.410553f8.181baec8.25e66a1b/?sid=1&shop=book&size=1&kind=1&me_id=1213310&me_adv_id=644082&t=pict" border="0" style="margin:2px" alt="" title=""></a>
     </div>
-    <br><br>
+    <br>
 
     <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
       <!-- 楽天 2 : https://affiliate.rakuten.co.jp/link/widget/?l-id=affiliate_PC_low_regular_a9 -->
