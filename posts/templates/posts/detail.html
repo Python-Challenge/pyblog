@@ -14,7 +14,8 @@
   <div style="width: 70%;margin: 0px auto;">
     <div>
       <div style="margin: 60px 20px;">
-        {{ blog.text | urlize | linebreaks }}
+        <!-- {{ blog.text | urlize | linebreaks | safe }} -->
+        {{ blog.text | safe | urlize | linebreaks }}
       </div>
       <div style="text-align: center; margin-top: 50px">
         <a href="{% url 'blogs:index' %}">トップページに戻る</a>
