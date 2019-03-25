@@ -9,12 +9,12 @@ body{
 }
 #main{
   /* width: 300px; */
-  width: 78%;
+  width: 100%;
   float: left;
 }
 #side{
-  /* width: 180px; */
-  width: 15%;
+  /* width: 120px; */
+  /* width: 15%; */
   float: right;
 }
 #footer{
