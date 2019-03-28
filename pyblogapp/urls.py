@@ -37,7 +37,6 @@ admin.site.index_title = 'メニュー'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},  name='sitemap'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     #path('robots\.txt$' include('django2_url_robots.views.robots_txt')),
     #path('manager/', include('manager.urls', namespace='manager')),
