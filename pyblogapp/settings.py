@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'posts.apps.PostsConfig',
-    'manager',
+    'polls.apps.PollsConfig',
     'django2_url_robots',
     'bootstrap4',
+    'manager',
 ]
 
 MIDDLEWARE = [

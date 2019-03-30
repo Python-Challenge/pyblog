@@ -16,11 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from django.conf.urls.static import static
 
 # https://narito.ninja/blog/detail/55/
 from django.contrib.sitemaps.views import sitemap
 from posts.sitemap import PostSitemap, StaticSitemap
+
+# https://ymgsapo.com/show-image-imagefield/
+# https://narito.ninja/blog/detail/92/
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 sitemaps = {
@@ -37,9 +43,16 @@ admin.site.index_title = 'メニュー'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('polls/', include('polls.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    #path('img_upload/', include('img_upload.urls', namespace='img_upload')),
+    #path('csv_upload/', include('csv_upload.urls', namespace='csv_upload')),
     #path('robots\.txt$' include('django2_url_robots.views.robots_txt')),
     #path('manager/', include('manager.urls', namespace='manager')),
-    path('csv_upload/', include('csv_upload.urls', namespace='csv_upload')),
     path('', include('posts.urls')),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
